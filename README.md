@@ -1,4 +1,4 @@
-#EventExample App
+# EventExample App
 
 This is example code for my [medium article] about events in React-native, including various examples on how to use events to communicate from native to Javascript, or between different Javascript components.
 
@@ -14,4 +14,6 @@ The javascript end is stored in `app/components/javatojs`. Note that `DeviceEven
 
 ## Javascript to javascript
 
-Code is hosted in `app/components/jstojs`. Basically, although `DeviceEventEmitter` can be used directly, the recommended way to proceed involves instantiating `NativeEventEmitter`. Be careful that for a given event name, **events emitted in any instance of `NativeEventEmitter` can be caught by any other instance**! This is illustrated in the example app: altough `BasicEventEmitter` calls `emit` directly on the `DeviceEventEmitter`, `CustomEventEmitter` will catch it too if a subscription has been made.
+Code is hosted in `app/components/jstojs`. Basically, although `DeviceEventEmitter` can be used directly, the recommended way to proceed involves instantiating `NativeEventEmitter`.
+
+Be careful that for a given event name, **events emitted in any instance of `NativeEventEmitter` can be caught by any other instance**! This is illustrated in the example app: altough `BasicEventEmitter` calls `emit` directly on the `DeviceEventEmitter`, `CustomEventEmitter` will catch it too if a subscription has been made.
